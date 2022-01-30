@@ -7,6 +7,7 @@
         <th>Currency</th>
         <th>Amount</th>
         <th>Interval</th>
+        <th></th>
     </tr>
 <% @prices.each do |price| %>
     <tr>
@@ -15,6 +16,7 @@
         <td><%= price.currency %></td>
         <td><%= price.unit_amount / 100 %></td>
         <td><%= price.recurring.interval %></td>
+        <td><%= link_to 'checkout', checkout_create_path(price: price.id), method: :post, remote: true %></td>
     </tr>
 <% end %>
 </table>
