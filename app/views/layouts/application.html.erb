@@ -11,7 +11,8 @@
 
   <body>
     <p class="notice"><%= notice %></p>
-    <%= link_to 'All Posts', posts_path %>
+    <%= link_to 'Posts', posts_path %>
+    <%= link_to 'Pricing', pricing_path %>
     <hr/>
     <% if current_user %>
       <%= link_to current_user.email, edit_user_registration_path %>

@@ -1,0 +1,20 @@
+<h1>Plans</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Currency</th>
+        <th>Amount</th>
+        <th>Interval</th>
+    </tr>
+<% @prices.each do |price| %>
+    <tr>
+        <td><%= price.id %></td>
+        <td><%= price.product.name %></td>
+        <td><%= price.currency %></td>
+        <td><%= price.unit_amount / 100 %></td>
+        <td><%= price.recurring.interval %></td>
+    </tr>
+<% end %>
+</table>
