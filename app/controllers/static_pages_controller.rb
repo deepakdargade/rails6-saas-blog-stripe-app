@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-    before_action :set_post, only: %i[ show edit update destroy ]
   
     def pricing
         @prices = Stripe::Price.list(

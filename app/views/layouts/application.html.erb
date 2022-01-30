@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://js.stripe.com/v3/' ></script>
   </head>
 
   <body>
@@ -15,6 +16,7 @@
     <%= link_to 'Pricing', pricing_path %>
     <hr/>
     <% if current_user %>
+      <%= link_to 'checkout', checkout_create_path, method: :post, remote: true %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to 'log out', destroy_user_session_path, method: :delete %>
       <br/>
