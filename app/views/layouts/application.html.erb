@@ -12,6 +12,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <%= link_to 'All Posts', posts_path %>
+    <hr/>
     <% if current_user %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to 'log out', destroy_user_session_path, method: :delete %>
@@ -19,6 +20,8 @@
       Plan: <%= current_user.plan %>
       <br/>
       Subscription Status: <%= current_user.subscription_status %>
+      <br/>
+      Stripe Id: <%= current_user.stripe_customer_id %>
     <% else %>
       <%= link_to 'log in', new_user_session_path %>
       <%= link_to 'register', new_user_registration_path %>
