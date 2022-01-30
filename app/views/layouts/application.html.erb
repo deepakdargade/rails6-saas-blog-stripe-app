@@ -15,6 +15,10 @@
     <% if current_user %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+      <br/>
+      Plan: <%= current_user.plan %>
+      <br/>
+      Subscription Status: <%= current_user.subscription_status %>
     <% else %>
       <%= link_to 'log in', new_user_session_path %>
       <%= link_to 'register', new_user_registration_path %>

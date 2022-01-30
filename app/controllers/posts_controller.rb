@@ -3,11 +3,18 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    if current_user.subscription_status == 'active'
+      @posts = Post.all
+    else  
+      @posts = Post.free
+    end
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    if current_user.subscription_status != 'active' && @post.is_premium
+      redirect_to posts_url, notice: "You must be an premium user to view premium posts."
+    end
   end
 
   # GET /posts/new
