@@ -16,6 +16,7 @@
     <%= link_to 'Pricing', pricing_path %>
     <hr/>
     <% if current_user %>
+      <%= link_to 'Billing Portal', billing_portal_create_path, method: :post %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to 'log out', destroy_user_session_path, method: :delete %>
       <br/>
